@@ -1,9 +1,14 @@
 {
-    "compilerOptions": {
-        "outDir": "dist/js",
-        "target": "ES6",
-        "noEmitOnError": true,
-        "noImplicitAny": true
-    },
-    "include": ["app/**/*"]
+  "compilerOptions": {
+    //Diretorio dos arquivos compilados
+    "outDir": "dist/js",
+    //Versão JS que o TS sera compilado
+    "target": "ES6",
+    //Não compila o TS se houver erro no código
+    "noEmitOnError": true,
+    //Não aceita que os valores sejam implicidamente do tipo any
+    "noImplicitAny" : true
+  },
+  //Caminhos dos arquivos TS
+  "include": ["app/**/*"]
 }
