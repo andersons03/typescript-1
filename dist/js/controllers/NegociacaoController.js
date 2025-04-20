@@ -1,13 +1,15 @@
-import { Negociacao } from "../models/Negociacao.js";
-import { Negociacoes } from "../models/Negociacoes.js";
-import { NefociacoesView } from "../views/NefociacoesView.js";
+import { Negociacao } from '../models/Negociacao.js';
+import { Negociacoes } from '../models/Negociacoes.js';
+import { MensagemView } from '../views/MensagemView.js';
+import { NegociacoesView } from '../views/NegociacoesView.js';
 export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
-        this.negociacoesView = new NefociacoesView("#negociacoesView");
-        this.inputData = document.querySelector("#data");
-        this.inputQuantidade = document.querySelector("#quantidade");
-        this.inputValor = document.querySelector("#valor");
+        this.negociacoesView = new NegociacoesView('#negociacoesView');
+        this.mensaemView = new MensagemView('#mensagemView');
+        this.inputData = document.querySelector('#data');
+        this.inputQuantidade = document.querySelector('#quantidade');
+        this.inputValor = document.querySelector('#valor');
         this.negociacoesView.update(this.negociacoes);
     }
     adiciona() {
@@ -16,6 +18,7 @@ export class NegociacaoController {
         console.log(this.negociacoes.lista());
         this.negociacoesView.update(this.negociacoes);
         this.limparFormulario();
+        this.mensaemView.update('Negociação adicionada com sucesso!');
     }
     criaNegociacao() {
         const exp = /-/g;
@@ -25,9 +28,9 @@ export class NegociacaoController {
         return new Negociacao(date, quantidade, valor);
     }
     limparFormulario() {
-        this.inputData.value = "";
-        this.inputQuantidade.value = "";
-        this.inputValor.value = "";
+        this.inputData.value = '';
+        this.inputQuantidade.value = '';
+        this.inputValor.value = '';
         this.inputData.focus();
     }
 }
