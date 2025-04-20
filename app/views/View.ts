@@ -4,9 +4,9 @@ export abstract class View<A> {
     this.elmento = document.querySelector(seletor);
   }
 
-  abstract template(model: A): string;
+  protected abstract template(model: A): string;
 
-  update(model: A): void {
+  public update(model: A): void {
     const template = this.template(model);
     this.elmento.innerHTML = template;
   }
