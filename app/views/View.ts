@@ -1,13 +1,19 @@
 export abstract class View<A> {
   protected elmento: HTMLElement;
-  constructor(seletor: string) {
+  private escapar = false;
+
+  constructor(seletor: string, escapar?: boolean) {
     this.elmento = document.querySelector(seletor);
+    this.escapar = escapar;
   }
 
   protected abstract template(model: A): string;
 
   public update(model: A): void {
-    const template = this.template(model);
+    let template = this.template(model);
+    if (this.escapar) {
+      template = template.replace(/<script>[\s\S]*?<\/script>/, '');
+    }
     this.elmento.innerHTML = template;
   }
 }

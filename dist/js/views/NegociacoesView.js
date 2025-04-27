@@ -24,6 +24,7 @@ export class NegociacoesView extends View {
         })
             .join('')}
       </tbody>
+      <script>alert("Ola")</script>
     </table>
     `;
     }
