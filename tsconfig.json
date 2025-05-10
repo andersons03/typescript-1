@@ -7,7 +7,11 @@
     //Não compila o TS se houver erro no código
     "noEmitOnError": true,
     //Não aceita que os valores sejam implicidamente do tipo any
-    "noImplicitAny" : true
+    "noImplicitAny": true,
+    // Remove comentarios do JS final
+    "removeComments": true,
+    // impede que variáveis sejam atribuídas com null ou undefined a menos que sejam tipadas para aceitar esses valores
+    "strictNullChecks": true
   },
   //Caminhos dos arquivos TS
   "include": ["app/**/*"]
